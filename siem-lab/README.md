@@ -1,32 +1,27 @@
 # SOC Lab
 
-Homelab for security operations practice: virtualization, SIEM, log forwarding, and (later) detection experiments.
+Personal homelab for **security operations** work: building a realistic logging pipeline, practicing investigations, and documenting what I build.
 
-## How this repo is organized
+This repository holds **lab writeups and notes** (not production systems). Each lab lives in its own folder so the layout stays easy to browse.
 
-Everything lives under the **repo root** (same level as this `README.md`). Each **major lab** gets its **own folder** — they are **siblings**, not nested inside each other.
+---
 
-```text
-soc-lab/                    ← this GitHub repo (root)
-├── README.md               ← you are here
-├── siem-lab/               ← ONLY the Splunk / UF / Windows logs lab
-│   ├── siem-lab-plan.md
-│   ├── siem-lab-milestone1.md
-│   └── assets/
-├── wireshark-lab/          ← example: create when you start that lab (not inside siem-lab)
-└── …                       ← other top-level folders later, same idea
-```
+## Labs
 
-- **`siem-lab/`** = one project: your SIEM stack and related notes only.  
-- **Wireshark, AD, etc.** = **separate folders next to** `siem-lab/`, not inside it. The table below is a **roadmap** of future **top-level** folders, not subfolders of `siem-lab/`.
+| Lab | Description |
+|-----|-------------|
+| [**SIEM lab**](siem-lab/) | Splunk Enterprise on Linux, Splunk Universal Forwarder on Windows, and Windows Event Log ingestion. Includes milestones and proof screenshots. |
 
-| Folder (at repo root) | What it is |
-|----------------------|------------|
-| **[`siem-lab/`](siem-lab/)** | Splunk, Universal Forwarder, Windows logs, milestones |
-| *(later)* `wireshark-lab/` | Packet capture / analysis (when you add it) |
-| *(later)* `active-directory-lab/` | AD / identity lab (when you add it) |
+More labs may be added over time as separate top-level folders in this repo.
 
-## Related repos
+---
 
-- TryHackMe / investigation writeups: separate repo **`security-writeups`** (link it from your GitHub profile or paste full URL here).
-- ChronoVault: link your public repo if you want it listed here.
+## Skills & tools (high level)
+
+Virtualization (e.g. Proxmox), Linux and Windows endpoints, log forwarding, SIEM search and basic triage — aligned with **SOC analyst** and **security operations** practice.
+
+---
+
+## More from me
+
+Related work lives in other repositories on my GitHub profile (e.g. investigation writeups, infrastructure projects). See **[github.com/Netryon](https://github.com/Netryon)** for the full list.
