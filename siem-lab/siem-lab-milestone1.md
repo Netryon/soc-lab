@@ -34,7 +34,7 @@ Expected: host = Windows VM name; sourcetypes `WinEventLog:Security`, `WinEventL
 
 Place your proof screenshot in **`assets/splunk-windows-events.png`** (or update the path below).
 
-![Splunk: Windows Event Log ingestion](siem-lab/asset/splunk-windows-events.png)
+![Splunk: Windows Event Log ingestion](siem-lab/assets/splunk-windows-events.png)
 
 ## Next (Milestone 2 – optional)
 
