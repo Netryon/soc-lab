@@ -1,26 +1,88 @@
-# SIEM Lab – Milestone 1 Plan
+# SIEM Lab Plan
 
 ## Goal
-Build a basic SIEM lab to ingest logs and detect at least one suspicious activity.
+
+Build a practical SOC homelab with reliable log ingestion, at least one detection alert, and clear milestone documentation.
 
 ## Stack choice
-- [X] Splunk
+
+- [x] Splunk
 - [ ] ELK
-Chosen: Splunk
+
+Chosen: **Splunk**
+
+---
 
 ## Lab environment
+
 - Host machine: Lenovo m720q running Proxmox (bare metal)
 - VM(s): Ubuntu Server VM (Splunk) + Windows 10 VM (log source)
-- Log source(s): Windows Event Logs + Sysmon
+- Log sources:
+  - Windows Event Logs (Security/System/Application)
+  - Sysmon (planned next)
 
-## Milestone 1 tasks (today)
-- [X] Install/prepare Proxmox on m720q
-- [X] Create Ubuntu Server VM (Splunk VM)
-- [X] Install Splunk and confirm web UI works
-- [X] Create Windows VM (log source)
-- [X] Ingest at least one Windows log source into Splunk
-- [X] Verify logs are searchable
-- [X] Take 1–2 screenshots as proof (Splunk UI + ingested logs)
+---
 
-## Definition of done
-I can search logs in the SIEM and show one screenshot as proof.
+## Milestone status
+
+### Milestone 1 - SIEM ingestion foundation (Completed)
+
+- [x] Install/prepare Proxmox on m720q
+- [x] Create Ubuntu Server VM (Splunk VM)
+- [x] Install Splunk and confirm web UI works
+- [x] Create Windows VM (log source)
+- [x] Install Splunk Universal Forwarder on Windows
+- [x] Ingest Windows Event Logs into Splunk
+- [x] Verify logs are searchable
+- [x] Capture proof screenshot(s)
+
+**Deliverable:** `siem-lab-milestone1.md` + screenshot evidence in `assets/`
+
+### Milestone 2 - Failed logon detection alert (Completed)
+
+- [x] Validate/restore Security log forwarding path
+- [x] Generate failed-login test events
+- [x] Build SPL for repeated failed logons with threshold logic
+- [x] Save alert: `M2 - Excessive Failed Logons (4625 text match)`
+- [x] Configure scheduled run (every 5 minutes) and trigger condition
+- [x] Capture detection and alert evidence screenshots
+- [x] Document implementation + validation in milestone writeup
+
+**Deliverable:** `siem-lab-milestone2.md` + screenshots:
+- `assets/m2-failed-logons-results.png`
+- `assets/m2-alert-configured.png`
+
+---
+
+## Next milestone (Milestone 3 - In progress)
+
+### Objective
+Add Sysmon telemetry and create one process-based detection.
+
+### Planned tasks
+
+- [ ] Install Sysmon on Windows endpoint
+- [ ] Apply baseline Sysmon config (community baseline)
+- [ ] Confirm Sysmon events are ingested in Splunk
+- [ ] Validate key event types (process create, network connect, image load)
+- [ ] Build one simple detection (example: suspicious PowerShell execution)
+- [ ] Save as scheduled alert with threshold/logic
+- [ ] Capture proof screenshot(s)
+- [ ] Write `siem-lab-milestone3.md`
+
+---
+
+## Current definition of done (project-level)
+
+- [x] Milestone 1 completed and documented
+- [x] Milestone 2 completed and documented
+- [ ] Milestone 3 completed and documented
+- [ ] At least 3 solid SOC-ready detection examples across milestones
+
+---
+
+## Notes
+
+- Keep all screenshots under `siem-lab/assets/`
+- Keep milestone files concise, reproducible, and evidence-based
+- Do not store credentials, tokens, or secrets in repository files
