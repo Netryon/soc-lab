@@ -1,10 +1,27 @@
 # SOC Lab
 
-This repository will document my home SOC / security lab. The goal of the lab is to practice real-world investigation workflows: collecting logs, simulating attacks, and analyzing alerts across Windows, Linux, and network environments.
+Personal homelab for **security operations** work: building a realistic logging pipeline, practicing investigations, and documenting what I build.
 
-The lab uses virtual machines (Windows, Linux, Kali) and tools such as Wireshark, Splunk/SIEM-style logging, and security monitoring services. Here I will add:
-- Lab architecture diagrams and notes
-- Attack simulations and investigation writeups
-- Scripts or configurations used for log collection and analysis
+This repository holds **lab writeups and notes** (not production systems). Each lab lives in its own folder so the layout stays easy to browse.
 
-This repo complements my ChronoVault project by focusing on **detection and investigation**, not just backup and hardening.
+---
+
+## Labs
+
+| Lab | Description |
+|-----|-------------|
+| [**SIEM lab**](siem-lab/) | Splunk Enterprise on Linux with Windows log forwarding. Includes Milestone 1 (log ingestion validation) and Milestone 2 (threshold-based failed logon detection alert) with proof screenshots. |
+
+More labs may be added over time as separate top-level folders in this repo.
+
+---
+
+## Skills & tools (high level)
+
+Virtualization (e.g. Proxmox), Linux and Windows endpoints, log forwarding, SIEM search and basic triage — aligned with **SOC analyst** and **security operations** practice.
+
+---
+
+## More from me
+
+Related work lives in other repositories on my GitHub profile (e.g. investigation writeups, infrastructure projects). See **[github.com/Netryon](https://github.com/Netryon)** for the full list.
