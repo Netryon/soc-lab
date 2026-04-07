@@ -8,8 +8,7 @@ Build a practical SOC homelab with reliable log ingestion, at least one detectio
 
 - [x] Splunk
 - [ ] ELK
-
-Chosen: **Splunk**
+Chosen: Splunk
 
 ---
 
@@ -36,7 +35,7 @@ Chosen: **Splunk**
 - [x] Verify logs are searchable
 - [x] Capture proof screenshot(s)
 
-**Deliverable:** `siem-lab-milestone1.md` + screenshot evidence in `assets/`
+Deliverable: `siem-lab-milestone1.md` plus screenshot evidence in `assets/`.
 
 ### Milestone 2 - Failed logon detection alert (Completed)
 
@@ -46,17 +45,39 @@ Chosen: **Splunk**
 - [x] Save alert: `M2 - Excessive Failed Logons (4625 text match)`
 - [x] Configure scheduled run (every 5 minutes) and trigger condition
 - [x] Capture detection and alert evidence screenshots
-- [x] Document implementation + validation in milestone writeup
+- [x] Document implementation and validation in milestone writeup
 
-**Deliverable:** `siem-lab-milestone2.md` + screenshots:
+Deliverable: `siem-lab-milestone2.md` plus screenshots:
 - `assets/m2-failed-logons-results.png`
 - `assets/m2-alert-configured.png`
 
 ---
 
-## Next milestone (Milestone 3 - In progress)
+## Milestone 3 - Failed-logons by source (Completed)
 
 ### Objective
+
+Implement and validate a source-centric failed-logon detection using Windows Security events in Splunk.
+
+### Completed tasks
+
+- [x] Run baseline ingestion gate checks (`index=main`, Security sourcetype)
+- [x] Build and run M3 SPL grouped by source (`src_ip`) and host
+- [x] Validate threshold logic (`failed_attempts >= 5`) with live test data
+- [x] Capture evidence screenshot(s)
+- [x] Finalize `siem-lab-milestone3.md`
+
+Evidence:
+- `assets/m3-gate-index-main-head5.png`
+- `assets/m3-gate-security-ingest.png`
+- `assets/m3-failed-logons-by-source.png`
+
+---
+
+## Next milestone (Milestone 4 - Planned)
+
+### Objective
+
 Add Sysmon telemetry and create one process-based detection.
 
 ### Planned tasks
@@ -68,7 +89,7 @@ Add Sysmon telemetry and create one process-based detection.
 - [ ] Build one simple detection (example: suspicious PowerShell execution)
 - [ ] Save as scheduled alert with threshold/logic
 - [ ] Capture proof screenshot(s)
-- [ ] Write `siem-lab-milestone3.md`
+- [ ] Write `siem-lab-milestone4.md`
 
 ---
 
@@ -76,7 +97,7 @@ Add Sysmon telemetry and create one process-based detection.
 
 - [x] Milestone 1 completed and documented
 - [x] Milestone 2 completed and documented
-- [ ] Milestone 3 completed and documented
+- [x] Milestone 3 completed and documented
 - [ ] At least 3 solid SOC-ready detection examples across milestones
 
 ---
