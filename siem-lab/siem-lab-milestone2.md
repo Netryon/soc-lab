@@ -30,7 +30,7 @@ Target outcome: produce a low-noise, repeatable signal suitable for analyst tria
 | Component | Role |
 |-----------|------|
 | **Proxmox** (Lenovo m720q) | Hypervisor hosting lab VMs |
-| **Ubuntu Server VM** (`siem-ubuntu-splunk`) | Splunk Enterprise (search + index) |
+| **Ubuntu Server VM** (`siemsplunk`) | Splunk Enterprise (search + index) |
 | **Windows 10 VM** (`DESKTOP-QKE3NI0`) | Log source + Splunk Universal Forwarder |
 | **Network** | Same LAN segment for forwarding + Splunk UI access |
 
@@ -123,6 +123,19 @@ Detection surfaced repeated failed logons and provided useful triage context:
 - source context (`src_ip`)
 - affected host (`host`)
 
+### Post-rebuild verification (2026-04-08)
+
+After rebuilding the Splunk VM, the alert was re-verified end-to-end:
+- Alert object present in Splunk Web (`Type: Alert`, `Enabled`, scheduled).
+- File-level alert settings confirmed in `savedsearches.conf`:
+  - `cron_schedule = */5 * * * *`
+  - `dispatch.earliest_time = -15m`
+  - `dispatch.latest_time = now`
+  - SPL threshold remains `failed_attempts >= 5`
+- Fire test executed with intentional failed logons; query results and job history showed successful scheduled execution and threshold hits.
+
+Note: in this lab state, editing all alert fields from Splunk Web was limited because the saved search was managed via config file on disk, so verification used both UI and file evidence.
+
 ---
 
 ## Analyst interpretation
@@ -167,9 +180,13 @@ When alert fires:
 
 ## Evidence
 
-![Detection query results](assets/m2-failed-logons-results.png)
+![Detection query results (rebuild verification)](assets/m2-alert-fire-test.png)
 
-![Scheduled alert configured](assets/m2-alert-configured.png)
+![Alert listed and enabled](assets/m2-alert-config-verify.png)
+
+![Alert settings verified in config](assets/m2-alert-config-verify-details.png)
+
+![Scheduled run evidence](assets/m2-alert-fire-test-job-evidence.png)
 
 ---
 
