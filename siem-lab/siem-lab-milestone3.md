@@ -67,16 +67,11 @@ This confirms the query and threshold are functioning as expected in the rebuilt
 
 ## Evidence
 
-Required run evidence:
-- `assets/m3-gate-index-main-head5.png`
-- `assets/m3-gate-security-ingest.png`
-- `assets/m3-failed-logons-by-source.png`
+![M3 gate check: index main](assets/m3-gate-index-main-head5.png)
 
-Related closure evidence for rebuild sign-off:
-- `assets/m2-alert-config-verify.png`
-- `assets/m2-alert-config-verify-details.png`
-- `assets/m2-alert-fire-test.png`
-- `assets/m2-alert-fire-test-job-evidence.png`
+![M3 gate check: Security ingest](assets/m3-gate-security-ingest.png)
+
+![M3 detection results by source](assets/m3-failed-logons-by-source.png)
 
 ---
 
