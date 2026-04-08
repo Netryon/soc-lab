@@ -173,6 +173,11 @@ Target settings:
 
 Final UI verification showed M4 object enabled with next scheduled run time.
 
+### 9) Fire test and run evidence
+
+A safe PowerShell command was executed on the Windows endpoint to generate test activity.
+Scheduled run evidence was then validated in Splunk Job Management for the M4 search object, confirming post-deployment execution with result rows.
+
 ---
 
 ## Analyst interpretation and tuning notes
@@ -220,6 +225,8 @@ It is a practical first endpoint behavior signal, not a high-confidence incident
 
 ![M4 alert configured and scheduled](assets/m4-alert-config-verify.png)
 
+![M4 alert fire test evidence](assets/m4-alert-fire-test.png)
+
 ---
 
 ## Milestone outcome
@@ -228,6 +235,7 @@ Milestone 4 objective achieved for scoped implementation:
 - Sysmon successfully onboarded and ingested,
 - key Sysmon process/network event families validated,
 - first process-based detection built and scheduled,
+- scheduled run evidence validated with fire-test screenshot,
 - full reproducible evidence captured for portfolio reporting.
 
 This milestone establishes a stronger endpoint-centric foundation for the next phase (deeper process analytics and higher-fidelity behavioral detections).
