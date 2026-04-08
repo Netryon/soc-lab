@@ -8,6 +8,7 @@ This folder holds everything for the **SIEM / log ingestion** project: plan, mil
 | [`siem-lab-milestone1.md`](siem-lab-milestone1.md) | Milestone 1: Splunk + Windows Event Logs |
 | [`siem-lab-milestone2.md`](siem-lab-milestone2.md) | Milestone 2: Failed logon threshold alert and validation |
 | [`siem-lab-milestone3.md`](siem-lab-milestone3.md) | Milestone 3: failed logons by source detection with live evidence |
+| [`siem-lab-milestone4.md`](siem-lab-milestone4.md) | Milestone 4: Sysmon onboarding and process-based PowerShell detection |
 | [`assets/`](assets/) | Screenshots and diagrams for this project |
 
 ---
