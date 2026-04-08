@@ -18,7 +18,7 @@ Chosen: Splunk
 - VM(s): Ubuntu Server VM (Splunk) + Windows 10 VM (log source)
 - Log sources:
   - Windows Event Logs (Security/System/Application)
-  - Sysmon (planned next)
+  - Sysmon (operational and ingested)
 
 ---
 
@@ -74,22 +74,47 @@ Evidence:
 
 ---
 
-## Next milestone (Milestone 4 - Planned)
+## Milestone 4 - Sysmon + process-based detection (Completed)
 
 ### Objective
 
-Add Sysmon telemetry and create one process-based detection.
+Onboard Sysmon telemetry and operationalize one process-based PowerShell detection.
+
+### Completed tasks
+
+- [x] Install Sysmon on Windows endpoint
+- [x] Apply baseline Sysmon config (community baseline)
+- [x] Confirm Sysmon events are ingested in Splunk
+- [x] Validate key event types (`event_id=1` and `event_id=3`)
+- [x] Build process-based detection (suspicious PowerShell execution)
+- [x] Save/schedule detection object in Splunk
+- [x] Capture proof screenshot(s)
+- [x] Write `siem-lab-milestone4.md`
+
+Evidence:
+- `assets/m4-gate-index-main-head5.png`
+- `assets/m4-sysmon-service-running.png`
+- `assets/m4-sysmon-config-applied.png`
+- `assets/m4-sysmon-ingest-confirmed.png`
+- `assets/m4-sysmon-key-events.png`
+- `assets/m4-detection-results-powershell.png`
+- `assets/m4-alert-config-verify.png`
+
+---
+
+## Next milestone (Milestone 5 - Planned)
+
+### Objective
+
+Raise detection fidelity with behavior correlation and reduced false positives.
 
 ### Planned tasks
 
-- [ ] Install Sysmon on Windows endpoint
-- [ ] Apply baseline Sysmon config (community baseline)
-- [ ] Confirm Sysmon events are ingested in Splunk
-- [ ] Validate key event types (process create, network connect, image load)
-- [ ] Build one simple detection (example: suspicious PowerShell execution)
-- [ ] Save as scheduled alert with threshold/logic
-- [ ] Capture proof screenshot(s)
-- [ ] Write `siem-lab-milestone4.md`
+- [ ] Tune PowerShell detection to suppress known benign UF/internal activity
+- [ ] Add parent/child process context fields and exclusions
+- [ ] Add one additional endpoint detection (for example: suspicious script download or LOLBin abuse)
+- [ ] Build a compact triage dashboard for endpoint detections
+- [ ] Capture evidence and write `siem-lab-milestone5.md`
 
 ---
 
@@ -98,7 +123,8 @@ Add Sysmon telemetry and create one process-based detection.
 - [x] Milestone 1 completed and documented
 - [x] Milestone 2 completed and documented
 - [x] Milestone 3 completed and documented
-- [ ] At least 3 solid SOC-ready detection examples across milestones
+- [x] Milestone 4 completed and documented
+- [x] At least 3 solid SOC-ready detection examples across milestones
 
 ---
 
